@@ -1590,67 +1590,261 @@ ul { list-style: none; }
         <h2 class="section__title">Explorez<br/><em>Lille &amp; alentours</em></h2>
       </div>
 
+      <!-- CARTE INTERACTIVE -->
+      <div class="map-container reveal" style="margin-bottom:3rem;border-radius:24px;overflow:hidden;box-shadow:0 12px 48px rgba(20,30,44,.18);border:1px solid rgba(43,58,82,.08)">
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1&hl=fr"
+          width="100%" height="420" style="border:0;display:block" loading="lazy" allowfullscreen
+          title="Carte des bonnes adresses"
+        ></iframe>
+        <!-- Fallback map via static embed -->
+        <div style="background:linear-gradient(145deg,#1E2D42,#2B3D58);padding:2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+          <div>
+            <p style="color:rgba(245,240,232,.5);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem">📍 Carte interactive</p>
+            <p style="color:var(--white);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700">16 adresses sélectionnées</p>
+            <p style="color:rgba(245,240,232,.55);font-size:.82rem">Depuis votre logement au 2 Route de Béthune</p>
+          </div>
+          <a href="https://maps.google.com/maps?q=2+Route+de+Bethune+59320+Haubourdin" target="_blank" class="btn btn-terra" style="font-size:.8rem;padding:.65rem 1.25rem">Ouvrir Google Maps →</a>
+        </div>
+      </div>
+
       <div class="tabs reveal">
         <button class="tab tab--active" data-tab="transports">🚆 Transports</button>
         <button class="tab" data-tab="restaurants">🍽️ Restos &amp; bars</button>
-        <button class="tab" data-tab="activites">🎭 À visiter</button>
+        <button class="tab" data-tab="activites">🎭 Activités</button>
         <button class="tab" data-tab="enfants">👶 Enfants</button>
         <button class="tab" data-tab="biere">🍺 Secrets bière</button>
       </div>
 
       <div class="tab-content">
+
+        <!-- TRANSPORTS -->
         <div class="tab-panel tab-panel--active" data-panel="transports">
           <div class="guide-list">
-            <div class="guide-item"><div class="guide-item__badge">🚌</div><div><h4>Bus — Ligne L5 direction Lille</h4><p>Arrêt <strong>VanderHagen</strong> · 3 min à pied · Rejoint Loos &amp; Lille</p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🚉</div><div><h4>Gare d'Haubourdin</h4><p>4 min en voiture · 20 min à pied</p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🏙️</div><div><h4>Gare Lille Flandres</h4><p>15 minutes en voiture</p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">✈️</div><div><h4>Aéroport Lille-Lesquin</h4><p>20 minutes en voiture</p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🚕</div><div><h4>Bijoway — Chauffeur privé</h4><p>Tél : 03 59 61 16 01 · <a href="https://www.byjoway.fr" target="_blank" class="guide-link">byjoway.fr</a></p></div></div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🚌</div>
+              <div>
+                <h4>Bus — Ligne L5 direction Lille</h4>
+                <p>L'arrêt <strong>VanderHagen</strong> se trouve à seulement <strong>3 minutes à pied</strong> du logement. La ligne L5 dessert Loos et Lille directement, sans correspondance. Idéal pour rejoindre le centre de Lille rapidement sans voiture.</p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🚉</div>
+              <div>
+                <h4>Gare d'Haubourdin</h4>
+                <p>La gare est à <strong>4 minutes en voiture</strong> ou <strong>20 minutes à pied</strong>. Elle permet de rejoindre Lille-Flandres en TER en moins de 10 minutes. Pratique pour explorer la métropole sans contrainte de stationnement.</p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🏙️</div>
+              <div>
+                <h4>Gare Lille-Flandres &amp; Euralille</h4>
+                <p>À <strong>15 minutes en voiture</strong>. Depuis Lille-Flandres, accès direct aux trains vers Paris (1h), Bruxelles (35 min via Eurostar), Amsterdam et Londres. Le centre commercial Euralille est juste à côté.</p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">✈️</div>
+              <div>
+                <h4>Aéroport Lille-Lesquin</h4>
+                <p>À <strong>20 minutes en voiture</strong>. Vols directs vers de nombreuses destinations européennes. La navette aéroport depuis Lille-centre est également disponible.</p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🚕</div>
+              <div>
+                <h4>Bijoway — Chauffeur privé</h4>
+                <p>Pour vos déplacements en VTC de qualité dans toute la métropole. Ponctuel et professionnel — idéal pour vos soirées ou transferts aéroport.<br/>📞 <strong>03 59 61 16 01</strong> · <a href="https://www.byjoway.fr" target="_blank" class="guide-link">byjoway.fr</a></p>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- RESTAURANTS & BARS -->
         <div class="tab-panel" data-panel="restaurants">
           <div class="guide-list">
-            <div class="guide-item"><div class="guide-item__badge">🍻</div><div><h4>Aux Enfants Terribles</h4><p><em>Un endroit où il fait bon vibre!</em><br/>14 Chemin de Wervicq, 59520 Marquette-lez-Lille · 03 20 11 01 04 · <a href="https://www.auxenfantsterribles.fr" target="_blank" class="guide-link">auxenfantsterribles.fr</a></p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🌇</div><div><h4>Le Nü — Rooftop</h4><p><em>Son incroyable rooftop surplombe la ville de Lille !</em><br/>93 Avenue Le Corbusier, 59000 Lille · <a href="https://www.nu-lille.fr" target="_blank" class="guide-link">nu-lille.fr</a></p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🐟</div><div><h4>Le Quai 38</h4><p><em>L'adresse lilloise pour déguster du bon poisson !</em><br/>38 Rue Saint-Sébastien, 59000 Lille · <a href="https://www.quai38-lille.fr" target="_blank" class="guide-link">quai38-lille.fr</a></p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">👨‍🍳</div><div><h4>Rouge Barre</h4><p><em>Une carte de saison selon les inspirations du Chef</em><br/>50 Rue de la Halle, 59800 Lille · <a href="https://www.rougebarre.fr" target="_blank" class="guide-link">rougebarre.fr</a></p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🫖</div><div><h4>L'impertinente</h4><p><em>Salon de thé — poney club @Lille</em><br/>9 Boulevard Papin, 59000 Lille · <a href="https://www.limpertinente.fr" target="_blank" class="guide-link">limpertinente.fr</a></p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🛁</div><div><h4>Ambiances et Spa — Privatif</h4><p>Parc des Pyramides, 413 Rue des Bourreliers, 59320 Hallennes-lez-Haubourdin · <a href="https://www.ambiancesetspa.com" target="_blank" class="guide-link">ambiancesetspa.com</a></p></div></div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🍻</div>
+              <div>
+                <h4>Aux Enfants Terribles <span style="font-size:.72rem;background:rgba(201,168,76,.15);color:#8B6A1A;padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.8 · 5 431 avis</span></h4>
+                <p>Une adresse incontournable de la métropole lilloise, installée au bord du canal à Marquette. L'ambiance y est festive et conviviale, entre pub anglais et brasserie française tendance. La carte propose burgers généreux, plats du terroir et une belle sélection de bières. Les chiens sont les bienvenus en terrasse. Parfait pour un déjeuner en semaine ou une soirée animée.<br/>
+                📍 14 Chemin de Wervicq, 59520 Marquette-lez-Lille · 📞 <strong>03 20 11 01 04</strong><br/>
+                🕐 Lun–Jeu 9h–minuit · Ven 9h–1h · Sam 12h–1h · Dim 12h–23h<br/>
+                <a href="https://www.auxenfantsterribles.fr" target="_blank" class="guide-link">auxenfantsterribles.fr</a></p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🌇</div>
+              <div>
+                <h4>Le Nü — Rooftop <span style="font-size:.72rem;background:rgba(201,168,76,.15);color:#8B6A1A;padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.3 · 2 786 avis</span></h4>
+                <p>Le rooftop le plus spectaculaire de Lille, au 15ème étage avec vue panoramique sur toute la métropole. Cuisine soignée, cocktails créatifs, ambiance chic et trendy. Idéal pour un dîner d'anniversaire ou une soirée spéciale. <strong>Réservation indispensable</strong> le week-end, au moins 2 semaines à l'avance.<br/>
+                📍 93 Avenue Le Corbusier, 59000 Lille · 📞 <strong>03 20 78 37 03</strong><br/>
+                🕐 Lun–Jeu 12h–15h &amp; 18h–minuit · Ven–Sam 12h–16h &amp; 18h–2h · Dim fermé<br/>
+                <a href="https://www.nu-lille.fr" target="_blank" class="guide-link">nu-lille.fr</a></p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🐟</div>
+              <div>
+                <h4>Le Quai 38 <span style="font-size:.72rem;background:rgba(196,96,58,.15);color:var(--terra);padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.8 · Coup de cœur</span></h4>
+                <p>L'une des meilleures tables de Lille, unanimement saluée pour la fraîcheur exceptionnelle de ses produits de la mer. La carte change quotidiennement selon les arrivages — bar, couteaux à l'ail, poulpe grillé, carpaccio de daurade. Le personnel vous aide à choisir vins au verre ou à la carafe. Plusieurs clients y retournent plusieurs fois lors d'un même séjour.<br/>
+                📍 38 Rue Saint-Sébastien, 59000 Lille · 📞 <strong>03 20 42 10 68</strong><br/>
+                🕐 Mar–Sam 12h–15h30 &amp; 19h30–23h30 · Lun &amp; Dim fermé<br/>
+                <a href="https://quai38-lille.fr" target="_blank" class="guide-link">quai38-lille.fr</a></p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">👨‍🍳</div>
+              <div>
+                <h4>Rouge Barre <span style="font-size:.72rem;background:rgba(196,96,58,.15);color:var(--terra);padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.8 · Gastronomique</span></h4>
+                <p>Une table gastronomique intime qui impressionne par sa régularité et son rapport qualité-prix exceptionnel. Le chef compose une carte de saison déclinée en menus dégustation 5 ou 7 services. L'accord mets-vins est remarquable. Cadre calme et élégant, service attentif. Idéal pour une occasion spéciale.<br/>
+                📍 50 Rue de la Halle, 59800 Lille · 📞 <strong>03 20 67 08 84</strong><br/>
+                🕐 Mar–Ven 12h–13h30 &amp; 19h30–21h30 · Sam–Dim fermé<br/>
+                <a href="http://www.rougebarre.fr" target="_blank" class="guide-link">rougebarre.fr</a></p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🫖</div>
+              <div>
+                <h4>L'impertinente <span style="font-size:.72rem;background:rgba(201,168,76,.15);color:#8B6A1A;padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.5 · 1 742 avis</span></h4>
+                <p>Un salon de thé cosy à l'identité forte, célèbre pour ses pâtisseries créatives et son chai latte. L'ambiance est douce et cocooning, la décoration soignée. La carte change avec les saisons. Excellent pour le goûter ou le brunch du week-end. Le dimanche matin, venez tôt — la file peut être longue !<br/>
+                📍 9 Boulevard Denis Papin, 59800 Lille · 📞 <strong>03 62 27 72 55</strong><br/>
+                🕐 Mar–Ven 8h30–18h30 · Sam–Dim 11h–18h30 · Lun fermé<br/>
+                <a href="http://www.limpertinente.fr" target="_blank" class="guide-link">limpertinente.fr</a></p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🛁</div>
+              <div>
+                <h4>Ambiances &amp; Spa <span style="font-size:.72rem;background:rgba(201,168,76,.15);color:#8B6A1A;padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.6 · À 5 min</span></h4>
+                <p>Un spa privatif à seulement <strong>5 minutes du logement</strong> — parfait pour une soirée détente en couple ou entre amis. Bain à remous, hammam, espace bien-être en accès exclusif. Ouvert très tard (jusqu'à 1h du matin en semaine). Réservation en ligne conseillée, surtout le week-end.<br/>
+                📍 413 Rue des Bourreliers, 59320 Hallennes-lez-Haubourdin · 📞 <strong>03 20 08 78 28</strong><br/>
+                🕐 Tous les jours 9h–1h (Dim jusqu'à 23h)<br/>
+                <a href="http://www.ambiancesetspa.com" target="_blank" class="guide-link">ambiancesetspa.com</a></p>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- ACTIVITÉS -->
         <div class="tab-panel" data-panel="activites">
           <div class="guide-list">
-            <div class="guide-item"><div class="guide-item__badge">🪂</div><div><h4>Weembi — Simulateur de chute libre</h4><p>730 Rue Maurice Herzog, 59810 Lesquin · <a href="https://www.weembi.com" target="_blank" class="guide-link">weembi.com</a></p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🎰</div><div><h4>Hall U Need — Le Las Vegas Lillois</h4><p>26 Rue Félix Faure, 59350 Saint-André-lez-Lille · <a href="https://www.halluneed.com" target="_blank" class="guide-link">halluneed.com</a></p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🔐</div><div><h4>Escape Time Lille</h4><p>500 Rue des Bourreliers Z.A, 59320 Hallennes-lez-Haubourdin · <a href="https://www.escapetime-lille.fr" target="_blank" class="guide-link">escapetime-lille.fr</a></p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🎤</div><div><h4>Singing Studio</h4><p>185–193 Pont de Flandres, 59000 Lille · <a href="https://www.singing-studio.com" target="_blank" class="guide-link">singing-studio.com</a></p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🌲</div><div><h4>Bois de La Gite</h4><p>Promenade &amp; running · Accès Rue Sadi Carnot, 59211 Santes</p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🏰</div><div><h4>Citadelle de Lille</h4><p>Nature, patrimoine et loisirs · <a href="https://www.parcdelacitadelle.lille.fr" target="_blank" class="guide-link">parcdelacitadelle.lille.fr</a></p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🌿</div><div><h4>Parc Mosaïc</h4><p>Jardin des cultures · 103 Rue Guy Môquet, 59263 Houplin-Ancoisne</p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🗺️</div><div><h4>Lille by Mat — Encore plus de bonnes adresses</h4><p><a href="https://www.lillebymat.fr" target="_blank" class="guide-link">lillebymat.fr</a></p></div></div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🪂</div>
+              <div>
+                <h4>Weembi — Chute libre indoor <span style="font-size:.72rem;background:rgba(201,168,76,.15);color:#8B6A1A;padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.7 · 2 480 avis</span></h4>
+                <p>La sensation de la chute libre dans une soufflerie indoor, sans avion ni parachute. Accessible à tous, débutants inclus — les moniteurs sont excellents. Idéal pour un team building, un enterrement de vie, ou simplement une dose d'adrénaline mémorable. Réservez en ligne, les créneaux du week-end partent vite.<br/>
+                📍 730 Rue Maurice Herzog, 59810 Lesquin · 📞 <strong>03 74 09 00 00</strong><br/>
+                🕐 Mar–Dim 9h–20h · Lun fermé<br/>
+                <a href="http://www.weembi.com" target="_blank" class="guide-link">weembi.com</a></p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🎰</div>
+              <div>
+                <h4>Hall U Need <span style="font-size:.72rem;background:rgba(196,96,58,.15);color:var(--terra);padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.7 · 17 848 avis</span></h4>
+                <p>Le complexe de loisirs le plus complet de la métropole — bowling, karaoké privé, salle d'arcade, simulateurs sportifs, bar et restaurant sur place. On peut y passer une journée entière sans s'ennuyer. Avec près de <strong>18 000 avis</strong>, c'est l'adresse incontournable pour une soirée complète entre amis.<br/>
+                📍 26 Rue Félix Faure, 59350 Saint-André-lez-Lille<br/>
+                🕐 Mar–Jeu 12h–minuit · Ven 11h–1h · Sam 11h–2h · Dim 11h–minuit<br/>
+                <a href="https://www.halluneed.com" target="_blank" class="guide-link">halluneed.com</a></p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🔐</div>
+              <div>
+                <h4>Escape Time Lille <span style="font-size:.72rem;background:rgba(201,168,76,.15);color:#8B6A1A;padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.6 · À 5 min</span></h4>
+                <p>5 salles d'escape game aux univers très différents, dont le mode <strong>Battle en équipes simultanées</strong> — unique dans la région. Décors particulièrement soignés, immersion totale. À seulement 5 minutes du logement à Hallennes. Idéal pour 2 à 6 joueurs, tous niveaux.<br/>
+                📍 500 Rue des Bourreliers Z.A, 59320 Hallennes-lez-Haubourdin<br/>
+                🕐 Lun &amp; Mer–Ven 13h–23h · Sam–Dim 10h–22h · Mar fermé<br/>
+                <a href="https://escapetime-lille.fr" target="_blank" class="guide-link">escapetime-lille.fr</a></p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🏰</div>
+              <div>
+                <h4>Citadelle de Lille <span style="font-size:.72rem;background:rgba(201,168,76,.15);color:#8B6A1A;padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.5 · 3 037 avis</span></h4>
+                <p>Le poumon vert de Lille — 60 hectares de parc classé, architecture militaire de Vauban du XVIIe siècle, zoo intégré et location de barques électriques sur les douves. En automne, des moutons paissent librement dans le parc — un spectacle inattendu. L'entrée du parc est <strong>gratuite</strong>.<br/>
+                📍 Voie Piétonne du Bois de la Deûle, 59130 Lille<br/>
+                🕐 Lun–Ven 10h–18h · Sam–Dim 10h–19h<br/>
+                <a href="https://parcdelacitadelle.lille.fr" target="_blank" class="guide-link">parcdelacitadelle.lille.fr</a></p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🌿</div>
+              <div>
+                <h4>Parc Mosaïc <span style="font-size:.72rem;background:rgba(201,168,76,.15);color:#8B6A1A;padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.6 · 2 488 avis</span></h4>
+                <p>9 hectares de jardins thématiques représentant les cultures du monde entier, avec un restaurant en serre, des concerts en plein air et des animations familiales régulières. Entrée à 5–6 €. Accessible à vélo par la piste cyclable depuis le logement. Un endroit qui surprend à chaque visite.<br/>
+                📍 103 Rue Guy Môquet, 59263 Houplin-Ancoisne<br/>
+                🕐 Mer–Ven 10h–18h · Sam 10h–18h · Dim 10h–19h<br/>
+                <a href="https://enm.lillemetropole.fr/parcs/mosaic-le-jardin-des-cultures" target="_blank" class="guide-link">mosaicgarden.fr</a></p>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- ENFANTS -->
         <div class="tab-panel" data-panel="enfants">
           <div class="guide-list">
-            <div class="guide-item"><div class="guide-item__badge">🎪</div><div><h4>Taho &amp; Lina — Parc de jeux couverts</h4><p>À <strong>10 minutes</strong> du logement ! · <a href="https://www.taho-lina.com/nos-parcs/lomme/" target="_blank" class="guide-link">taho-lina.com</a></p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">🐥</div><div><h4>La Ferme aux Oies — Kids Friendly</h4><p>101 Rue du Pavé Stratégique, 59700 Marcq-en-Baroeul · <a href="https://www.lestaminetdelafermeauxoies.fr" target="_blank" class="guide-link">lestaminetdelafermeauxoies.fr</a></p></div></div>
-            <div class="guide-item"><div class="guide-item__badge">👶</div><div><h4>Lit de bébé dans le logement</h4><p>Lit parapluie avec matelas disponible.</p></div></div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🎪</div>
+              <div>
+                <h4>Gulli Parc Lille — Lomme <span style="font-size:.72rem;background:rgba(201,168,76,.15);color:#8B6A1A;padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.2 · À 10 min</span></h4>
+                <p>Le paradis des enfants de 1 à 12 ans à <strong>10 minutes du logement</strong>. Structures de jeux couvertes immenses, propres et sécurisées. Personnel bilingue anglais-français, très attentionné. Parfait par temps de pluie ou grand froid. Les anniversaires peuvent être organisés sur place. Les parents apprécient les tables et le café disponibles.<br/>
+                📍 12 Rue du Château d'Isenghien, 59160 Lomme · 📞 <strong>09 72 30 73 73</strong><br/>
+                🕐 Mer, Ven–Dim 10h–19h · Lun, Mar, Jeu fermé<br/>
+                <a href="https://www.gulli-parc.com/nos-parcs/lomme/" target="_blank" class="guide-link">gulli-parc.com</a></p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🐥</div>
+              <div>
+                <h4>La Ferme aux Oies — L'Estaminet <span style="font-size:.72rem;background:rgba(201,168,76,.15);color:#8B6A1A;padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.6 · 7 139 avis</span></h4>
+                <p>Un estaminet charmant installé dans une véritable ferme réaménagée, avec espace de jeux pour les enfants intégré. Cuisine généreuse et de qualité (steaks, frites maison, welsh), service rapide et chaleureux. Avec plus de <strong>7 000 avis</strong>, c'est l'une des adresses familiales les plus appréciées de la métropole.<br/>
+                📍 101 Rue Pavé Stratégique, 59700 Marcq-en-Baroeul · 📞 <strong>03 20 65 42 63</strong><br/>
+                🕐 Mar–Sam 12h–14h30 &amp; 19h–22h30 · Dim 12h–14h45 · Lun fermé<br/>
+                <a href="http://www.lestaminetdelafermeauxoies.fr" target="_blank" class="guide-link">lestaminetdelafermeauxoies.fr</a></p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">👶</div>
+              <div>
+                <h4>Lit de bébé disponible dans le logement</h4>
+                <p>Un lit parapluie avec matelas est disponible sur demande dans le logement. Mentionnez-le lors de votre réservation ou contactez-nous avant votre arrivée.</p>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- BIÈRES SECRÈTES -->
         <div class="tab-panel" data-panel="biere">
-          <p class="tab-intro">🤫 Les 2 endroits secrets de la Bière selon Clémentine &amp; Jeremy :</p>
+          <p class="tab-intro">🤫 Les 2 adresses secrètes de Clémentine &amp; Jeremy — pour les vrais amateurs :</p>
           <div class="guide-list">
-            <div class="guide-item guide-item--featured"><div class="guide-item__badge">🍺</div><div><h4>Le T — Bar trappiste</h4><p><em>Un concept unique dans la région</em><br/>3 Rue Marceau, 59136 Wavrin · <a href="https://www.facebook.com/letwavrin" target="_blank" class="guide-link">facebook.com/letwavrin</a></p></div></div>
-            <div class="guide-item guide-item--featured"><div class="guide-item__badge">🍻</div><div><h4>Breweppes — Brasserie artisanale des Weppes</h4><p>10 Rue des Charrons, 59134 Herlies · <a href="https://www.breweppes.fr" target="_blank" class="guide-link">breweppes.fr</a></p></div></div>
+            <div class="guide-item guide-item--featured">
+              <div class="guide-item__badge">🍺</div>
+              <div>
+                <h4>Brasserie Breweppes <span style="font-size:.72rem;background:rgba(201,168,76,.15);color:#8B6A1A;padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.9 · Coup de cœur absolu</span></h4>
+                <p>Le secret le mieux gardé des Weppes ! Cette micro-brasserie artisanale produit des bières d'exception dans un cadre authentique et convivial. Le taproom ouvre le week-end avec musique live certains vendredis et un food truck. En été, la cour extérieure et le terrain de pétanque complètent l'expérience. Prix très raisonnables pour une qualité exceptionnelle.<br/>
+                📍 10 Rue des Charrons, 59134 Herlies · 📞 <strong>03 20 04 69 62</strong><br/>
+                🕐 Lun–Jeu 9h–17h (vente) · <strong>Ven 17h–1h · Sam 17h–2h</strong> (taproom) · Dim fermé<br/>
+                <a href="https://www.breweppes.fr" target="_blank" class="guide-link">breweppes.fr</a></p>
+              </div>
+            </div>
+            <div class="guide-item guide-item--featured">
+              <div class="guide-item__badge">🍻</div>
+              <div>
+                <h4>Le T — Bar trappiste <span style="font-size:.72rem;background:rgba(201,168,76,.15);color:#8B6A1A;padding:.15rem .5rem;border-radius:50px;margin-left:.4rem">⭐ 4.8 · 648 avis</span></h4>
+                <p>Un bar-épicerie trappiste absolument unique dans la région — même au niveau européen. Rochefort, Westmalle, Chimay, Orval… chaque bière servie dans son propre verre, accompagnée de planches de fromages et charcuteries d'exception. L'ambiance est intime et cultivée. Des visiteurs britanniques ont spécialement fait le déplacement depuis la UK — et y sont retournés.<br/>
+                📍 3 Rue Marceau, 59136 Wavrin · 📞 <strong>03 20 58 55 48</strong><br/>
+                🕐 Mar–Jeu 10h–14h &amp; 16h–22h · <strong>Ven 17h–minuit · Sam 10h–minuit</strong> · Dim–Lun fermé<br/>
+                <a href="http://www.le-t-wavrin.fr" target="_blank" class="guide-link">le-t-wavrin.fr</a></p>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
+
 
   <!-- ═══════ DÉPART ═══════ -->
   <section class="section section--slate" id="depart">
