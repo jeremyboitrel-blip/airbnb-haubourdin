@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenue chez Clémentine & Jeremy · Haubourdin</title>
+  <meta name="description" content="Guide de séjour — 2 Route de Béthune, 59320 Haubourdin. Explorez Lille et ses alentours avec Clémentine & Jeremy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-icon">✦</span>
+        <span>C&amp;J · Haubourdin</span>
+      </a>
+      <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#infos" class="nav__link">Infos</a></li>
+        <li><a href="#logement" class="nav__link">Logement</a></li>
+        <li><a href="#regles" class="nav__link">Règles</a></li>
+        <li><a href="#guide" class="nav__link">Guide local</a></li>
+        <li><a href="#depart" class="nav__link">Départ</a></li>
+        <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__gradient"></div>
+      <div class="hero__grain"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">2 Route de Béthune · 59320 Haubourdin</p>
+      <h1 class="hero__title reveal reveal--delay-1">
+        Bienvenue<br/><em>chez vous !</em>
+      </h1>
+      <p class="hero__subtitle reveal reveal--delay-2">
+        Nous sommes ravis de vous accueillir chez nous.<br/>
+        Explorez Lille et ses alentours &amp; créez des souvenirs mémorables.
+      </p>
+      <div class="hero__btns reveal reveal--delay-3">
+        <a href="#infos" class="btn btn--primary">
+          Explorer le guide
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn btn--outline">Contacter les hôtes</a>
+      </div>
+    </div>
+    <div class="hero__hosts reveal reveal--delay-3">
+      <div class="hero__hosts-badge">
+        <span>CJ</span>
+        <p>Clémentine &amp; Jeremy</p>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <div class="hero__scroll-line"></div>
+      <span>Défiler</span>
+    </div>
+  </section>
+
+  <!-- INFOS ESSENTIELLES -->
+  <section class="section" id="infos">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">Infos essentielles</p>
+        <h2 class="section__title">Tout ce qu'il<br/>faut savoir</h2>
+      </div>
+      <div class="info-grid">
+
+        <div class="info-card reveal">
+          <div class="info-card__icon">📍</div>
+          <p class="info-card__label">Adresse</p>
+          <p class="info-card__value">2 Route de Béthune</p>
+          <p class="info-card__sub">59320 Haubourdin<br/>Appartement au <strong>fond à droite du parking</strong></p>
+          <a href="https://maps.google.com/?q=2+Route+de+Bethune+59320+Haubourdin" target="_blank" class="info-card__link">Ouvrir dans Maps →</a>
+        </div>
+
+        <div class="info-card reveal reveal--delay-1">
+          <div class="info-card__icon">🕐</div>
+          <p class="info-card__label">Check-in</p>
+          <p class="info-card__value">À partir de 17h00</p>
+          <p class="info-card__sub">Clés dans la <strong>boîte à clés sécurisée</strong> à côté du portail.<br/>Code envoyé par SMS ou e-mail.</p>
+        </div>
+
+        <div class="info-card reveal reveal--delay-2">
+          <div class="info-card__icon">🧳</div>
+          <p class="info-card__label">Check-out</p>
+          <p class="info-card__value">Avant 11h00</p>
+          <p class="info-card__sub">Laisser la clé dans la boîte de dépôt.</p>
+        </div>
+
+        <div class="info-card reveal reveal--delay-3">
+          <div class="info-card__icon">📶</div>
+          <p class="info-card__label">WiFi — Réseau</p>
+          <p class="info-card__value">Orange</p>
+          <p class="info-card__sub">Mot de passe : <strong>sur la carte au dessus du compteur Enedis</strong></p>
+        </div>
+
+        <div class="info-card reveal">
+          <div class="info-card__icon">🅿️</div>
+          <p class="info-card__label">Parking</p>
+          <p class="info-card__value">Gratuit</p>
+          <p class="info-card__sub">Parking gratuit directement devant le logement.</p>
+        </div>
+
+        <div class="info-card reveal reveal--delay-1">
+          <div class="info-card__icon">🗑️</div>
+          <p class="info-card__label">Poubelles</p>
+          <p class="info-card__value">Dans la cour</p>
+          <p class="info-card__sub">Bacs à ordures devant l'entrée. Pensez au <strong>tri sélectif</strong>.</p>
+        </div>
+
+      </div>
+
+      <div class="urgences reveal">
+        <p class="urgences__title">🚨 Numéros d'urgence disponibles 24h/24</p>
+        <div class="urgences__grid">
+          <div><span class="urgences__num">15</span><span>SAMU</span></div>
+          <div><span class="urgences__num">17</span><span>Police</span></div>
+          <div><span class="urgences__num">18</span><span>Pompiers</span></div>
+          <div><span class="urgences__num">112</span><span>Europe</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGEMENT -->
+  <section class="section section--alt" id="logement">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">Le logement</p>
+        <h2 class="section__title">Votre espace<br/><em>de vie</em></h2>
+      </div>
+
+      <div class="logement-intro reveal">
+        <p>
+          Profitez de notre magnifique appartement équipé, situé au <strong>2 Route de Béthune</strong>,
+          au fond à droite du parking. Idéalement placé à <strong>Haubourdin</strong>, à quelques minutes
+          de Lille, il offre tout le confort pour un séjour réussi — professionnel ou touristique.
+        </p>
+        <p class="logement-intro__note">
+          📌 Pour assurer le fonctionnement en toute sécurité des appareils, lisez les instructions dans le <strong>placard situé dans le salon</strong>.
+        </p>
+      </div>
+
+      <div class="equipements-grid">
+        <div class="equip-card reveal"><div class="equip-card__icon">🛏️</div><h4>Lit double</h4><p>140×190 cm · draps fournis</p></div>
+        <div class="equip-card reveal reveal--delay-1"><div class="equip-card__icon">🛋️</div><h4>Canapé</h4><p>Salon confortable</p></div>
+        <div class="equip-card reveal reveal--delay-2"><div class="equip-card__icon">🚿</div><h4>Douche italienne</h4><p>Serviettes petits &amp; grands modèles fournies</p></div>
+        <div class="equip-card reveal reveal--delay-3"><div class="equip-card__icon">🍽️</div><h4>Table à dîner</h4><p>4 personnes · couverts, assiettes &amp; verres</p></div>
+        <div class="equip-card reveal"><div class="equip-card__icon">📺</div><h4>Télévision</h4><p>Dans le salon</p></div>
+        <div class="equip-card reveal reveal--delay-1"><div class="equip-card__icon">📶</div><h4>WiFi Orange</h4><p>Mot de passe sur compteur Enedis</p></div>
+        <div class="equip-card reveal reveal--delay-2"><div class="equip-card__icon">🧺</div><h4>Machine à laver</h4><p>Disponible dans le logement</p></div>
+        <div class="equip-card reveal reveal--delay-3"><div class="equip-card__icon">❄️</div><h4>Réfrigérateur</h4><p>Avec congélateur</p></div>
+        <div class="equip-card reveal"><div class="equip-card__icon">🍳</div><h4>Four &amp; Plaque + Hotte</h4><p>Cuisine entièrement équipée</p></div>
+        <div class="equip-card reveal reveal--delay-1"><div class="equip-card__icon">☕</div><h4>Cafetière Nespresso</h4><p>Pour bien commencer la journée</p></div>
+        <div class="equip-card reveal reveal--delay-2"><div class="equip-card__icon">📦</div><h4>Micro-ondes</h4><p>Dans la cuisine</p></div>
+        <div class="equip-card reveal reveal--delay-3"><div class="equip-card__icon">👶</div><h4>Lit de bébé</h4><p>Parapluie avec matelas disponible</p></div>
+        <div class="equip-card reveal"><div class="equip-card__icon">🔥</div><h4>Détecteur de fumée</h4><p>Et monoxyde de carbone</p></div>
+        <div class="equip-card reveal reveal--delay-1"><div class="equip-card__icon">🅿️</div><h4>Parking gratuit</h4><p>Devant le logement</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RÈGLES -->
+  <section class="section" id="regles">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">Règles de la maison</p>
+        <h2 class="section__title">Pour un séjour<br/><em>serein</em></h2>
+      </div>
+      <p class="regles-intro reveal">Pour préserver un environnement confortable et sécurisé pour tous :</p>
+
+      <div class="regles-layout">
+        <div class="regles-col">
+          <div class="regle-item reveal">
+            <div class="regle-item__icon regle-item__icon--no">🚭</div>
+            <div>
+              <h4>Interdit</h4>
+              <ul>
+                <li>Fumer à l'intérieur — strictement interdit</li>
+                <li>Fêtes ou rassemblements bruyants</li>
+              </ul>
+            </div>
+          </div>
+          <div class="regle-item reveal reveal--delay-1">
+            <div class="regle-item__icon regle-item__icon--ok">🐾</div>
+            <div>
+              <h4>Animaux domestiques</h4>
+              <ul>
+                <li>Animaux autorisés sur les lieux ✓</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="regles-col">
+          <div class="regle-item reveal">
+            <div class="regle-item__icon regle-item__icon--info">👥</div>
+            <div>
+              <h4>Voyageurs supplémentaires</h4>
+              <ul>
+                <li>Supplément : <strong>15 € / voyageur / nuit</strong></li>
+                <li>Au-delà du 2ème voyageur inclus</li>
+              </ul>
+            </div>
+          </div>
+          <div class="regle-item reveal reveal--delay-1">
+            <div class="regle-item__icon regle-item__icon--ok">🕐</div>
+            <div>
+              <h4>Horaires à respecter</h4>
+              <ul>
+                <li>Check-in à partir de <strong>17h00</strong></li>
+                <li>Check-out avant <strong>11h00</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE LOCAL -->
+  <section class="section section--alt" id="guide">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">Nos bonnes adresses</p>
+        <h2 class="section__title">Explorez<br/><em>Lille &amp; alentours</em></h2>
+      </div>
+
+      <div class="tabs reveal">
+        <button class="tab tab--active" data-tab="transports">🚆 Transports</button>
+        <button class="tab" data-tab="restaurants">🍽️ Restos &amp; bars</button>
+        <button class="tab" data-tab="activites">🎭 À visiter</button>
+        <button class="tab" data-tab="enfants">👶 Enfants</button>
+        <button class="tab" data-tab="biere">🍺 Secrets bière</button>
+      </div>
+
+      <div class="tab-content">
+
+        <div class="tab-panel tab-panel--active" data-panel="transports">
+          <div class="guide-list">
+            <div class="guide-item">
+              <div class="guide-item__badge">🚌</div>
+              <div><h4>Bus — Ligne L5 direction Lille</h4><p>Arrêt <strong>VanderHagen</strong> · 3 min à pied · Rejoint Loos &amp; Lille</p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🚉</div>
+              <div><h4>Gare d'Haubourdin</h4><p>4 min en voiture · 20 min à pied</p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🏙️</div>
+              <div><h4>Gare Lille Flandres</h4><p>15 minutes en voiture</p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">✈️</div>
+              <div><h4>Aéroport Lille-Lesquin</h4><p>20 minutes en voiture</p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🚕</div>
+              <div><h4>Bijoway — Chauffeur privé</h4><p>Tél : 03 59 61 16 01 · <a href="https://www.byjoway.fr" target="_blank" class="guide-link">byjoway.fr</a></p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="restaurants">
+          <div class="guide-list">
+            <div class="guide-item">
+              <div class="guide-item__badge">🍻</div>
+              <div><h4>Aux Enfants Terribles</h4><p><em>Un endroit où il fait bon vibre!</em><br/>14 Chemin de Wervicq, 59520 Marquette-lez-Lille · 03 20 11 01 04<br/><a href="https://www.auxenfantsterribles.fr" target="_blank" class="guide-link">auxenfantsterribles.fr</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🌇</div>
+              <div><h4>Le Nü — Rooftop</h4><p><em>Son incroyable rooftop surplombe la ville de Lille !</em><br/>93 Avenue Le Corbusier, 59000 Lille<br/><a href="https://www.nu-lille.fr" target="_blank" class="guide-link">nu-lille.fr</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🐟</div>
+              <div><h4>Le Quai 38</h4><p><em>L'adresse lilloise pour déguster du bon poisson !</em><br/>38 Rue Saint-Sébastien, 59000 Lille<br/><a href="https://www.quai38-lille.fr" target="_blank" class="guide-link">quai38-lille.fr</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">👨‍🍳</div>
+              <div><h4>Rouge Barre</h4><p><em>Une carte de saison selon les inspirations du Chef</em><br/>50 Rue de la Halle, 59800 Lille<br/><a href="https://www.rougebarre.fr" target="_blank" class="guide-link">rougebarre.fr</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🫖</div>
+              <div><h4>L'impertinente</h4><p><em>Salon de thé — poney club @Lille</em><br/>9 Boulevard Papin, 59000 Lille<br/><a href="https://www.limpertinente.fr" target="_blank" class="guide-link">limpertinente.fr</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🛁</div>
+              <div><h4>Ambiances et Spa — Spa privatif</h4><p>Parc des Pyramides, 413 Rue des Bourreliers, 59320 Hallennes-lez-Haubourdin<br/><a href="https://www.ambiancesetspa.com" target="_blank" class="guide-link">ambiancesetspa.com</a></p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="activites">
+          <div class="guide-list">
+            <div class="guide-item">
+              <div class="guide-item__badge">🪂</div>
+              <div><h4>Weembi — Simulateur de chute libre</h4><p>730 Rue Maurice Herzog, 59810 Lesquin · <a href="https://www.weembi.com" target="_blank" class="guide-link">weembi.com</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🎰</div>
+              <div><h4>Hall U Need — Le Las Vegas Lillois</h4><p>26 Rue Félix Faure, 59350 Saint-André-lez-Lille · <a href="https://www.halluneed.com" target="_blank" class="guide-link">halluneed.com</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🔐</div>
+              <div><h4>Escape Time Lille</h4><p>500 Rue des Bourreliers Z.A, 59320 Hallennes-lez-Haubourdin · <a href="https://www.escapetime-lille.fr" target="_blank" class="guide-link">escapetime-lille.fr</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🎤</div>
+              <div><h4>Singing Studio</h4><p>185–193 Pont de Flandres, 59000 Lille · <a href="https://www.singing-studio.com" target="_blank" class="guide-link">singing-studio.com</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🌲</div>
+              <div><h4>Bois de La Gite</h4><p>Une promenade ou pour les coureurs · Accès Rue Sadi Carnot, 59211 Santes</p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🏰</div>
+              <div><h4>Citadelle de Lille</h4><p>Nature, patrimoine et loisirs · <a href="https://www.parcdelacitadelle.lille.fr" target="_blank" class="guide-link">parcdelacitadelle.lille.fr</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🌿</div>
+              <div><h4>Parc Mosaïc</h4><p>Le jardin des cultures · 103 Rue Guy Môquet, 59263 Houplin-Ancoisne</p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🎨</div>
+              <div><h4>Boutique Wim Affiches</h4><p>17 Rue de la Bourse, Lille · <a href="https://www.wim-shop.fr" target="_blank" class="guide-link">wim-shop.fr</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🗺️</div>
+              <div><h4>Lille by Mat — Encore plus de bonnes adresses</h4><p><a href="https://www.lillebymat.fr" target="_blank" class="guide-link">lillebymat.fr</a></p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="enfants">
+          <div class="guide-list">
+            <div class="guide-item">
+              <div class="guide-item__badge">🎪</div>
+              <div><h4>Taho &amp; Lina — Parc de jeux couverts</h4><p>À <strong>10 minutes</strong> du logement !<br/><a href="https://www.taho-lina.com/nos-parcs/lomme/" target="_blank" class="guide-link">taho-lina.com</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">🐥</div>
+              <div><h4>La Ferme aux Oies — Kids Friendly</h4><p>101 Rue du Pavé Stratégique, 59700 Marcq-en-Baroeul<br/><a href="https://www.lestaminetdelafermeauxoies.fr" target="_blank" class="guide-link">lestaminetdelafermeauxoies.fr</a></p></div>
+            </div>
+            <div class="guide-item">
+              <div class="guide-item__badge">👶</div>
+              <div><h4>Lit de bébé dans le logement</h4><p>Lit parapluie avec matelas disponible.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="biere">
+          <p class="tab-intro">🤫 Les 2 endroits secrets de la Bière selon Clémentine &amp; Jeremy :</p>
+          <div class="guide-list">
+            <div class="guide-item guide-item--featured">
+              <div class="guide-item__badge">🍺</div>
+              <div><h4>Le T — Bar trappiste</h4><p><em>Un concept unique dans la région</em><br/>3 Rue Marceau, 59136 Wavrin · <a href="https://www.facebook.com/letwavrin" target="_blank" class="guide-link">facebook.com/letwavrin</a></p></div>
+            </div>
+            <div class="guide-item guide-item--featured">
+              <div class="guide-item__badge">🍻</div>
+              <div><h4>Breweppes — Brasserie artisanale des Weppes</h4><p>10 Rue des Charrons, 59134 Herlies · <a href="https://www.breweppes.fr" target="_blank" class="guide-link">breweppes.fr</a></p></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DÉPART -->
+  <section class="section" id="depart">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">Avant de partir</p>
+        <h2 class="section__title">Check-out<br/><em>avant 11h</em></h2>
+      </div>
+      <div class="depart-grid">
+        <div class="depart-card reveal"><div class="depart-card__icon">🔑</div><p>Laisser la clé dans la <strong>boîte de dépôt</strong></p></div>
+        <div class="depart-card reveal reveal--delay-1"><div class="depart-card__icon">🗑️</div><p><strong>Sortir la poubelle</strong></p></div>
+        <div class="depart-card reveal reveal--delay-2"><div class="depart-card__icon">🍽️</div><p><strong>Faire la vaisselle</strong></p></div>
+        <div class="depart-card reveal reveal--delay-3"><div class="depart-card__icon">💡</div><p><strong>Éteindre lumières</strong> &amp; verrouiller les portes</p></div>
+        <div class="depart-card reveal"><div class="depart-card__icon">🛁</div><p>Laisser <strong>serviettes &amp; draps</strong> utilisés sur le sol</p></div>
+        <div class="depart-card reveal reveal--delay-1"><div class="depart-card__icon">🔌</div><p>Vérifier <strong>tiroirs &amp; prises</strong> — n'oubliez rien !</p></div>
+      </div>
+      <p class="depart-merci reveal reveal--delay-2">Merci !</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--dark" id="contact">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label" style="color:var(--gold-light)">Vos hôtes</p>
+        <h2 class="section__title" style="color:#fff">Clémentine<br/><em>&amp; Jeremy</em></h2>
+      </div>
+      <p class="contact-intro reveal">
+        Nous sommes là pour vous aider en cas de besoin.<br/>
+        N'hésitez pas à nous contacter par téléphone ou e-mail — toujours disponibles pour vous.
+      </p>
+      <div class="contact-cards reveal reveal--delay-1">
+        <a href="tel:+33699597018" class="contact-card">
+          <div class="contact-card__icon">📞</div>
+          <h4>Téléphone</h4>
+          <p>06 99 59 70 18</p>
+        </a>
+        <a href="https://wa.me/33699597018" target="_blank" class="contact-card">
+          <div class="contact-card__icon">💬</div>
+          <h4>WhatsApp</h4>
+          <p>06 99 59 70 18<br/>Réponse rapide</p>
+        </a>
+        <a href="mailto:c.boitrel14@gmail.com" class="contact-card">
+          <div class="contact-card__icon">✉️</div>
+          <h4>Email</h4>
+          <p>c.boitrel14@gmail.com</p>
+        </a>
+      </div>
+      <div class="emergency reveal reveal--delay-2">
+        <h4>⚡ Urgences</h4>
+        <ul>
+          <li>SAMU : <strong>15</strong></li>
+          <li>Police : <strong>17</strong></li>
+          <li>Pompiers : <strong>18</strong></li>
+          <li>Europe : <strong>112</strong></li>
+        </ul>
+      </div>
+      <p class="avis-cta reveal reveal--delay-3">
+        ⭐ Nous espérons que vous avez passé un agréable séjour. Si vous pouviez nous faire part de vos commentaires sur Airbnb, ce serait grandement apprécié !
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__logo">✦ Clémentine &amp; Jeremy</p>
+      <p class="footer__tagline">Bon séjour à Haubourdin · Explorez Lille et ses alentours</p>
+      <p class="footer__copy">2 Route de Béthune · 59320 Haubourdin · Fait avec ♡</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
