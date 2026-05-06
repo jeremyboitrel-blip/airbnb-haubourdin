@@ -1,32 +1,41 @@
 /* ═══════════════════════════════════════════════════
-   BIENVENUE À HAUBOURDIN — Script
-   Animations, navigation, tabs, interactions
+   BIENVENUE À HAUBOURDIN — Script Premium v2
+   Particules, scroll progress, tabs, nav, animations
    ═══════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── 1. NAV STICKY ──────────────────────────────
-  const nav = document.getElementById('nav');
-
-  const handleScroll = () => {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
+  // ── 1. SCROLL PROGRESS BAR ─────────────────────
+  const progressBar = document.getElementById('progress-bar');
+  const updateProgress = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = progress + '%';
   };
+  window.addEventListener('scroll', updateProgress, { passive: true });
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // ── 2. BACK TO TOP ─────────────────────────────
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) backToTop.classList.add('visible');
+    else backToTop.classList.remove('visible');
+  }, { passive: true });
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 
-  // ── 2. BURGER MENU ─────────────────────────────
+  // ── 3. NAV STICKY ──────────────────────────────
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+
+  // ── 4. BURGER MENU ─────────────────────────────
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('nav-links');
-
-  // Create overlay
-  const overlay = document.createElement('div');
-  overlay.className = 'nav-overlay';
-  document.body.appendChild(overlay);
+  const overlay = document.getElementById('nav-overlay');
 
   const openMenu = () => {
     burger.classList.add('open');
@@ -34,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.classList.add('visible');
     document.body.style.overflow = 'hidden';
   };
-
   const closeMenu = () => {
     burger.classList.remove('open');
     navLinks.classList.remove('open');
@@ -42,153 +50,104 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   };
 
-  burger.addEventListener('click', () => {
-    burger.classList.contains('open') ? closeMenu() : openMenu();
-  });
-
+  burger.addEventListener('click', () => burger.classList.contains('open') ? closeMenu() : openMenu());
   overlay.addEventListener('click', closeMenu);
-
-  // Close on nav link click
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
+  navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
 
 
-  // ── 3. REVEAL ON SCROLL ────────────────────────
-  const revealElements = document.querySelectorAll('.reveal');
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        // Once revealed, no need to keep observing
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
-  });
-
-  revealElements.forEach(el => revealObserver.observe(el));
-
-
-  // ── 4. SMOOTH SCROLL FOR ANCHOR LINKS ──────────
+  // ── 5. SMOOTH SCROLL ───────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
+    anchor.addEventListener('click', e => {
       const target = document.querySelector(anchor.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
-
-      const navHeight = nav.offsetHeight;
-      const targetTop = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
-
-      window.scrollTo({
-        top: targetTop,
-        behavior: 'smooth'
-      });
+      const offset = nav.offsetHeight + 16;
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
     });
   });
 
 
-  // ── 5. TABS (GUIDE LOCAL) ──────────────────────
+  // ── 6. REVEAL ON SCROLL ────────────────────────
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => revealObs.observe(el));
+
+
+  // ── 7. TABS ─────────────────────────────────────
   const tabs = document.querySelectorAll('.tab');
   const panels = document.querySelectorAll('.tab-panel');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const targetPanel = tab.dataset.tab;
-
-      // Update tabs
       tabs.forEach(t => t.classList.remove('tab--active'));
+      panels.forEach(p => p.classList.remove('tab-panel--active'));
       tab.classList.add('tab--active');
-
-      // Update panels
-      panels.forEach(panel => {
-        panel.classList.remove('tab-panel--active');
-        if (panel.dataset.panel === targetPanel) {
-          panel.classList.add('tab-panel--active');
-        }
-      });
+      const panel = document.querySelector(`[data-panel="${tab.dataset.tab}"]`);
+      if (panel) panel.classList.add('tab-panel--active');
     });
   });
 
 
-  // ── 6. ACTIVE NAV LINK ON SCROLL ──────────────
-  const sections = document.querySelectorAll('section[id]');
-  const navLinkItems = document.querySelectorAll('.nav__link:not(.nav__link--cta)');
+  // ── 8. PARTICULES HERO ─────────────────────────
+  const particlesContainer = document.getElementById('particles');
+  if (particlesContainer) {
+    const count = 28;
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.className = 'hero__particle';
+      const size = Math.random() * 3 + 1;
+      const left = Math.random() * 100;
+      const duration = Math.random() * 15 + 10;
+      const delay = Math.random() * 10;
+      const opacity = Math.random() * 0.5 + 0.2;
+      p.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        left: ${left}%;
+        animation-duration: ${duration}s;
+        animation-delay: -${delay}s;
+        opacity: ${opacity};
+      `;
+      particlesContainer.appendChild(p);
+    }
+  }
 
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const sectionId = entry.target.getAttribute('id');
 
-        navLinkItems.forEach(link => {
-          link.classList.remove('nav__link--active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('nav__link--active');
-          }
-        });
-      }
-    });
-  }, {
-    threshold: 0.4
-  });
-
-  sections.forEach(section => sectionObserver.observe(section));
-
-
-  // ── 7. HERO PARALLAX (subtle) ──────────────────
+  // ── 9. HERO PARALLAX ───────────────────────────
   const hero = document.querySelector('.hero');
   const heroContent = document.querySelector('.hero__content');
+  const skyline = document.querySelector('.hero__skyline');
 
-  if (hero && heroContent) {
+  if (hero) {
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY;
-      const heroHeight = hero.offsetHeight;
-
-      if (scrolled <= heroHeight) {
-        const progress = scrolled / heroHeight;
-        heroContent.style.transform = `translateY(${scrolled * 0.25}px)`;
-        heroContent.style.opacity = `${1 - progress * 1.5}`;
+      const heroH = hero.offsetHeight;
+      if (scrolled <= heroH) {
+        const p = scrolled / heroH;
+        if (heroContent) {
+          heroContent.style.transform = `translateY(${scrolled * 0.22}px)`;
+          heroContent.style.opacity = `${1 - p * 1.6}`;
+        }
+        if (skyline) {
+          skyline.style.transform = `translateY(${scrolled * 0.08}px)`;
+        }
       }
     }, { passive: true });
   }
 
 
-  // ── 8. INFO CARD — COPY TO CLIPBOARD ──────────
-  const wifiCard = document.querySelector('[data-wifi]');
-  if (wifiCard) {
-    wifiCard.style.cursor = 'pointer';
-    wifiCard.addEventListener('click', () => {
-      navigator.clipboard.writeText(wifiCard.dataset.wifi).then(() => {
-        const original = wifiCard.querySelector('.info-card__value').textContent;
-        wifiCard.querySelector('.info-card__value').textContent = 'Copié !';
-        setTimeout(() => {
-          wifiCard.querySelector('.info-card__value').textContent = original;
-        }, 1500);
-      }).catch(() => {});
-    });
-  }
-
-
-  // ── 9. STAGGERED CARD HOVER ────────────────────
-  // Subtle stagger on grid items when parent hovered
-  const grids = document.querySelectorAll('.equipements-grid, .info-grid, .extras-grid');
-
-  grids.forEach(grid => {
-    const cards = grid.querySelectorAll('[class*="card"]');
-    cards.forEach((card, i) => {
-      card.style.setProperty('--i', i);
-    });
-  });
-
-
-  // ── 10. ANNÉE FOOTER ──────────────────────────
-  const yearEl = document.querySelector('.footer__copy');
-  if (yearEl) {
-    const currentYear = new Date().getFullYear();
-    yearEl.textContent = yearEl.textContent.replace('2025', currentYear);
+  // ── 10. ANNÉE FOOTER ───────────────────────────
+  const copyEl = document.querySelector('.footer__copy');
+  if (copyEl) {
+    const yr = new Date().getFullYear();
+    copyEl.textContent = copyEl.textContent.replace('2025', yr).replace('2026', yr);
   }
 
 });
